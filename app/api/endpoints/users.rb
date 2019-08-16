@@ -10,13 +10,12 @@ module Endpoints
         requires :name, type: String
         requires :email, type: String
         requires :password, type: String
-        requires :password_confirmation, type: String
+        requires :password_confirmation, type: String, same_as: :password
       end
 
       post do
-        User::CreateFlow.trigger(name: params[:name], email: params[:email])
+        User::CreateFlow.trigger(name: params[:name], email: params[:email], password: params[:password])
       end
-
     end
   end
 end

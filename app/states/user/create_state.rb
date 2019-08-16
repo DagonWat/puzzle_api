@@ -3,4 +3,5 @@
 class User::CreateState < ApplicationState
   option :name
   option :email
+  option :password
 end
