@@ -7,7 +7,7 @@ gem 'pg', '>= 0.18'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.1'
 
-gem 'devise', '~> 4.4'
+gem 'jwt'
 gem 'carrierwave', '~> 1.0'
 gem 'grape'
 gem 'grape-entity'

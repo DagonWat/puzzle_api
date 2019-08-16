@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreateUserState < ApplicationState
+class User::CreateState < ApplicationState
   option :name
   option :email
 end
