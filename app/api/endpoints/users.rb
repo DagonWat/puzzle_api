@@ -2,8 +2,9 @@
 
 module Endpoints
   class Users < Grape::API
+    helpers ::GrapeFlow
 
-    resource :users do
+    namespace :users do
 
       desc 'Create new User'
       params do
@@ -14,7 +15,9 @@ module Endpoints
       end
 
       post do
-        User::CreateFlow.trigger(name: params[:name], email: params[:email], password: params[:password])
+        run_flow User::CreateFlow do
+          present @state.user, with: Entities::User
+        end
       end
     end
   end

@@ -15,7 +15,11 @@ describe 'Endpoints::Users' do
 
         expect(response).to be_successful
 
-        user = User.last
+        p response.body
+
+        user = Entities::User.represent(User.last).to_json
+
+        expect(response.body).to eq(user)
 
         expect(user.name).to eq(params[:name])
         expect(user.email).to eq(params[:email])
