@@ -2,6 +2,7 @@
 
 module Endpoints
   class Auth < Grape::API
+    helpers ::GrapeFlow
 
     resource :auth do
 
@@ -12,9 +13,10 @@ module Endpoints
       end
 
       post 'login' do
-        Auth::LoginFlow.trigger(name: params[:name], password: params[:password])
+        run_flow ::Auth::LoginFlow do
+          present @state.token
+        end
       end
     end
   end
 end
-

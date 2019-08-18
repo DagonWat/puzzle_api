@@ -3,5 +3,8 @@
 class Auth::LoginState < ApplicationState
   option :name
   option :password
+  option :user
+
+  output :token
 end
 

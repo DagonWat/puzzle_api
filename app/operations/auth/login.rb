@@ -2,8 +2,7 @@
 
 class Auth::Login < ApplicationOperation
   def behavior
-    p 1
-    # User.create!(name: state.name, email: state.email, rating: 1000)
+    user = User.find_by(name: state.name).try(:authenticate, state.password)
+    state.user = user if user.present?
   end
 end
-

@@ -6,8 +6,6 @@ module GrapeFlow
 
     _assign_vars(result)
 
-    p @state.user
-
     raise Exceptions::DataInvalid, @state.errors.full_messages.join('. ') if @state.errors.present?
 
     yield(result) if result.success? && block_given?
