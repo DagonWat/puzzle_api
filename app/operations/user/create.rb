@@ -3,7 +3,7 @@
 class User::Create < ApplicationOperation
   def behavior
     state.user = User.create!(name: state.name, email: state.email,
-                              password: state.password, password_confirmation: state.password,
+                              password: state.password, password_confirmation: state.password_confirmation,
                               rating: 1000)
   end
 end

@@ -13,20 +13,10 @@ describe 'Endpoints::Auth' do
 
       expect(response).to be_successful
 
-      p json_response
+      #TODO change to ENV['JWT_SECRET']
+      decoded_token = JWT.decode json_response, 'dasdafasfsasf', true, { algorithm: 'HS256' }
 
-      # params = {name: "name", email: "name@gmail.com", password: '12314', password_confirmation: '12314'}
-      #
-      # expect do
-      #   post '/api/users', params: params
-      # end.to change(User, :count).by(1)
-      #
-      # expect(response).to be_successful
-      #
-      # user = User.last
-      #
-      # expect(json_response['name']).to eq(params[:name])
-      # expect(json_response['email']).to eq(params[:email])
+      expect(decoded_token.first['user_id']).to eq(user.id)
     end
   end
 end
