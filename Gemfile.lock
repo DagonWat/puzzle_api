@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/stympy/faker.git
-  revision: 16cf902b8b25ef0340aef57f49bd48465970af77
+  revision: a1c672930811d6bf71ce522c522bc255c345a6b8
   branch: master
   specs:
     faker (2.8.1)
@@ -65,7 +65,7 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
-    builder (3.2.3)
+    builder (3.2.4)
     byebug (11.0.1)
     capybara (3.29.0)
       addressable
@@ -301,7 +301,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 RUBY VERSION
-   ruby 2.6.1p33
+   ruby 2.5.1p57
 
 BUNDLED WITH
-   2.0.1
+   1.16.2
