@@ -9,7 +9,7 @@ gem 'rails', '~> 5.2.1'
 
 gem 'bcrypt'
 gem 'jwt'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'grape'
 gem 'grape-entity'
 gem 'grape-swagger'
